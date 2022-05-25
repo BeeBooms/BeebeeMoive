@@ -1,0 +1,40 @@
+<%- include("../partials/header.ejs") %>
+<div class="container add-movie">
+<h1 class="add-header">Edit your Moive</h1>
+<form action="/prints/<%= print._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+<div class="mb-3 add-detail">
+    <label class="form-label">Name Movie</label>
+    <input type="text" class="form-control" name="print[name]" placeholder="<%= print.name %>", value = "<%= print.name %>">
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Date</label>
+    <input type="text" class="form-control" name="print[date]" placeholder="<%= print.date %>", value = "<%= print.date %>">
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Image</label>
+    <img src="<%= print.image %>" height = '300px'>
+    <input type="file" class="form-control" name="image" accept='image/*'>
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control box-title" name="print[title]" placeholder="<%= print.title %>", value="<%= print.title%>">
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">StyleMovie</label>
+    <input type="text" class="form-control" name="print[stylemovie]" placeholder="<%= print.stylemovie %>", value="<%= print.stylemovie%>">
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Timemovie</label>
+    <input type="text" class="form-control" name="print[timemovie]" placeholder="<%= print.timemovie %>", value="<%= print.timemovie%>">
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Trailer</label>
+    <input type="text" class="form-control" name="print[trailer]" placeholder="<%= print.trailer %>", value="<%= print.trailer%>">
+</div>
+<button type="submit" class="btn btn-primary btn-add">Submit</button>
+<a href="/prints">Go back</a>
+</form>
+</div>
+
+
+<%- include("../partials/footer.ejs") %>

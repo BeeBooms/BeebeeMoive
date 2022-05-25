@@ -1,0 +1,20 @@
+<%- include("../partials/header.ejs") %>
+<div class="row">
+    <div class="col">
+        <img class="profile-img" src="<%= user.profileImage %>" height = '300px'>
+        <p class="profile-name"><%= user.firstName + ' ' + user.lastName %></p>
+        <p class="profile-name">
+            <a class="profile-email" href='mailto: <%= user.email %>'> <%= user.email %></a>
+        </p>
+        <p class="profile-name">Payment : KBANK</p>
+    </div>
+    <div class="col Fav-right">
+        <p class="Fav-movie">My Favorite Movie</p>
+        <ul class="Fav-ul">
+            <% prints.forEach(function(print){ %>
+                <li><a class="Fav-detail" href='/prints/<%= print.id %>'><%= print.name %></a></li>
+            <% });%>
+        </ul>
+    </div>
+</div>
+<%- include("../partials/footer.ejs") %>

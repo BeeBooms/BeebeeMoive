@@ -1,0 +1,43 @@
+<%- include("../partials/header.ejs") %>
+    <div class="row">
+        <div class="movie-img">
+            <img class="movie-img" src="<%= print.image %>">
+        </div>
+        <div class="col detail-movie">
+            <h1><%= print.name %></h1>
+            <p> <%= print.date %></p>
+            <p> <%= print.stylemovie %></p>
+            <p> <%= print.timemovie %></p>
+            <a class="btn overlay-detail-btn movie-btn" type="button" href="/Theater">Showtimes</a>
+        </div>
+        <iframe class="trailer" src="<%= print.trailer %>?autoplay=1" style="height:600px;width:1000px;" title="Iframe"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+
+    <p class="title-movie">Title</p>
+        <div class="title-detail">
+                <p><%= print.title %></p>
+        </div>
+
+    <p class="submit-detail">Submitted by <%= print.author.username %></p>
+    <% if (currentUser && currentUser.isAdmin === true) { %>
+        <a href="/prints/<%= print._id %>/edit" class="btn btn-sm btn-outline-secondary btn-edit">Edit</a>
+        <form id= 'delete-form' action = "/prints/<%= print._id %>?_method=DELETE" method ="POST">
+            <button type='submit' class="btn btn-sm btn-outline-secondary btn-delete">Delete</button>
+        </form>
+    <% } %>
+    <h2 class="submit-detail">Comments:</h2>
+    <a href="/prints/<%= print._id %>/comments/new" class="btn btn-sm btn-outline-secondary btn-comment">Add new comment</a>
+    <% print.comments.forEach(function(comment){ %>
+        <p>
+            <p  class="comment-name"><%= comment.author.username %> : </p>
+            <p class="comment-detail"> <%= comment.text %></p>
+        </p>
+        <% if (currentUser && comment.author.id.equals(currentUser._id) || (currentUser &&  currentUser.isAdmin)){ %>
+            <a href="/prints/<%= print._id %>/comments/<%= comment._id %>/edit" class="btn btn-sm btn-outline-secondary btn-edit">Edit</a>
+            <form id= 'delete-form' action = "/prints/<%= print._id %>/comments/<%= comment._id %>?_method=DELETE" method ="POST">
+                <button type='submit' class="btn btn-sm btn-outline-secondary btn-delete">Delete</button>
+            </form>
+        <% } %>  
+    <% }) %>
+<%- include("../partials/footer.ejs") %>

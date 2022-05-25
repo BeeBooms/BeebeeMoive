@@ -1,0 +1,118 @@
+<%- include("partials/header.ejs") %>
+<section class="home-container">
+
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="/images/juban.jpg" class="d-block w-100" alt="jurasic">
+			</div>
+			<div class="carousel-item">
+				<img src="/images/spiderman.jpeg" class="d-block w-100" alt="spiderman">
+			</div>
+			<div class="carousel-item">
+				<img src="/images/batman.jpg" class="d-block w-100" alt="batman">
+			</div>
+			<div class="carousel-item">
+				<img src="/images/st.png" class="d-block w-100" alt="st">
+			</div>
+        </div>
+      </div>
+
+
+	<p class="home-head">Now Showing</p>
+	<article class="home-grid">
+		<% prints.forEach(function(prints){ %>
+		<div class="home-movie">
+			<img class="home-thumb" src="<%= prints.image %>">
+			<p class="home-movie-date"><%= prints.date %></p>
+			<p class="home-movie-name"><%= prints.name %></p>
+			<a href="/prints/<%= prints._id %>" class="btn btn-sm btn-outline-secondary movie-btn">View</a>
+		</div>
+		<% }); %> 
+	</article>
+
+	<p class="home-head2">Coming soon</p>
+		<article class="home-grid">
+				<div class="home-movie">
+					<img class="home-thumb" src="/images/shark.jpg">
+					<p class="home-movie-date">2022-06-02</p>
+					<p class="home-movie-name">Shark Bait</p>
+				</div>
+				<div class="home-movie">
+					<img class="home-thumb" src="/images/bus.jpg">
+					<p class="home-movie-date">2022-06-16</p>
+					<p class="home-movie-name">Buzz Lightyear</p>
+				</div>
+				<div class="home-movie">
+					<img class="home-thumb" src="/images/jujutsu.jpg">
+					<p class="home-movie-date">2022-06-23</p>
+					<p class="home-movie-name">JUJUTSU KAISEN : ZERO</p>
+				</div>
+				<div class="home-movie">
+					<img class="home-thumb" src="/images/minion.jpg">
+					<p class="home-movie-date">2022-06-30</p>
+					<p class="home-movie-name">Minion 2</p>
+				</div>
+				<div class="home-movie">
+					<img class="home-thumb" src="/images/blackadam.jpg">
+					<p class="home-movie-date">2022-10-20</p>
+					<p class="home-movie-name">Black Adam</p>
+				</div>
+	
+		</article>
+
+	<p class="home-head2">Top 5</p>
+		<article class="home-grid">
+				<div class="home-movie">
+					<p class="top">1</p>
+					<img class="home-thumb" src="/images/m1.jpg">
+					<p class="home-movie-date">2022-05-24</p>
+					<p class="home-movie-name">Dr Strange Multiverse</p>
+					<a href="/prints/<%= prints._id %>" class="btn btn-sm btn-outline-secondary movie-btn">View</a>
+				</div>
+				<div class="home-movie">
+					<p class="top">2</p>
+					<img class="home-thumb" src="/images/uncharted.png">
+					<p class="home-movie-date">2022-05-24</p>
+					<p class="home-movie-name">Unccharted</p>
+					<a href="/prints/<%= prints._id %>" class="btn btn-sm btn-outline-secondary movie-btn">View</a>
+				</div>
+				<div class="home-movie">
+					<p class="top">3</p>
+					<img class="home-thumb" src="/images/jurasic.jpg">
+					<p class="home-movie-date">2022-05-24</p>
+					<p class="home-movie-name">Jurassic World Dominion</p>
+					<a href="/prints/<%= prints._id %>" class="btn btn-sm btn-outline-secondary movie-btn">View</a>
+				</div>
+				<div class="home-movie">
+					<p class="top">4</p>
+					<img class="home-thumb" src="/images/thebatman.jpg">
+					<p class="home-movie-date">2022-05-26</p>
+					<p class="home-movie-name">The Batman</p>
+					<a href="/prints/<%= prints._id %>" class="btn btn-sm btn-outline-secondary movie-btn">View</a>
+				</div>
+				<div class="home-movie">
+					<p class="top">5</p>
+					<img class="home-thumb" src="/images/conan.jpg">
+					<p class="home-movie-date">2022-05-31</p>
+					<p class="home-movie-name">Conan The Movie 25</p>
+					<a href="/prints/<%= prints._id %>" class="btn btn-sm btn-outline-secondary movie-btn">View</a>
+				</div>		
+	
+		</article>
+
+	<p class="home-head2">Promotion</p>
+		<article">
+			<div class="home-Promotion">
+				<img class="home-Pro" src="images/Pro1.jpg">
+				<img class="home-Pro" src="images/Pro2.jpg">
+				<img class="home-Pro" src="images/Pro3.jpg">
+				<img class="home-Pro" src="images/Pro4.jpg">
+			</div>
+				
+	
+		</article>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,38 @@
+<%- include("../partials/header.ejs") %>
+<div class="container add-movie">
+<h1 class="add-header">Add your new Movie</h1>
+<form action="/prints" method="POST" enctype="multipart/form-data">
+<div class="mb-3 add-detail">
+    <label class="form-label">Name Movie</label>
+    <input type="text" class="form-control" name="print[name]" placeholder="Print title">
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Date</label>
+    <input type="date" class="form-control" name="print[date]" placeholder="Date">
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Image</label>
+    <input type="file" class="form-control" name="image" accept='image/*'>
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control box-title" name="print[title]" accept='Title/*'>
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">StyleMovie</label>
+    <input type="text" class="form-control" name="print[stylemovie]" accept='StyleMovie/*'>
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Timemovie</label>
+    <input type="text" class="form-control" name="print[timemovie]" accept='Timemovie/*'>
+</div>
+<div class="mb-3 add-detail">
+    <label class="form-label">Trailer</label>
+    <input type="text" class="form-control" name="print[trailer]" placeholder="https://www.youtube.com/embed/FhZH7HIqB8k" accept='Trailer/*'>
+</div>
+<button type="submit" class="btn btn-primary btn-add">Submit</button>
+<a href="/prints">Go back</a>
+</form>
+</div>
+
+<%- include("../partials/footer.ejs") %>
